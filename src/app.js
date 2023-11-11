@@ -67,7 +67,7 @@ app.get('/weather', (req, res) => {
     });
 
     // res.send({
-    //     forecast: 'Pk',
+    //     forecast: 'Test',
     //     location: 'Colombo',
     //     address: req.query.address // /weather?address=Colombo
     // });
