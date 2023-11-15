@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define Paths for Express Config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -102,8 +103,8 @@ app.get('*', (req, res) => { // * -> Match anything that hasn't been matched so 
 });
 
 // server run
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log('Server is up on port ' + port);
 });
 
 // nodemon src/app.js -e js,hbs
