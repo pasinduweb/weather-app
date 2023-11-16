@@ -9,7 +9,19 @@ const forecast = (latitude, longitude, callback) => {
         } else if (response.statusCode !== 200) { // 200 indicates a successful response
             callback('Unable to Find Location.', undefined);
         } else {
-            callback(undefined, response.body.days[0].description + ' It is currently ' + response.body.currentConditions.temp + ' degrees out. There is a ' + response.body.currentConditions.precipprob + '% chance of rain.');
+            callback(
+                undefined,
+                response.body.days[0].description +
+                ' It is currently ' +
+                response.body.currentConditions.temp +
+                ' degrees out. The high today is ' +
+                response.body.days[0].tempmax +
+                ' with a low of ' +
+                response.body.days[0].tempmin +
+                '. There is a ' +
+                response.body.currentConditions.precipprob +
+                '% chance of rain.'
+            );
         }
     });
 };
